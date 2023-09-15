@@ -42,7 +42,11 @@ class AdminAuth
             throw new \Exception('请先登录', ResponseCode::LOGIN);
         }
         if ($token) {
-            $AdminUserObj = Rsa::decrypt($token, app_path('certs') . 'rsa_private.pem');
+            try {
+                $AdminUserObj = Rsa::decrypt($token, app_path('certs') . 'rsa_private.pem');
+            } catch (\Throwable $th) {
+                throw new \Exception($th->getMessage(), ResponseCode::DELETE_LOGIN);
+            }
             if (!$AdminUserObj->is_system) {
                 $key = app('http')->getName() . ".$controller.{$request->action()}";
                 $auth = Cache::get($key);
@@ -53,7 +57,7 @@ class AdminAuth
                     throw new Exception("权限未开启，请联系管理员");
                 }
                 if (!$AdminUserObj->admin_role_id) {
-                    throw new Exception("请重新登录，无任何管理权限");
+                    throw new Exception("请重新登录，无任何管理权限", ResponseCode::DELETE_LOGIN);
                 }
                 $rule = Cache::get("AdminRole.{$AdminUserObj->admin_role_id}");
                 if (!$rule) {
@@ -72,10 +76,10 @@ class AdminAuth
             }
             $Admin = Admin::where(['id' => $AdminUserObj->uid])->field('state')->find();
             if (!$Admin) {
-                throw new Exception("管理员不存在");
+                throw new Exception("管理员不存在", ResponseCode::DELETE_LOGIN);
             }
             if (!$Admin->state) {
-                throw new Exception("管理员状态异常");
+                throw new Exception("管理员状态异常", ResponseCode::DELETE_LOGIN);
             }
             $request->uid = $AdminUserObj->uid;
             $request->admin_role_id = $AdminUserObj->admin_role_id;

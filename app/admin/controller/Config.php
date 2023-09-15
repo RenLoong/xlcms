@@ -11,9 +11,9 @@ class Config extends BaseController
     {
         $data = [
             'siteinfo' => [
-                'name' => 'ThinkPHP8',
-                'title' => 'ThinkPHP8',
-                'description' => 'ThinkPHP8',
+                'name' => 'Xlcms',
+                'title' => 'XLCMS',
+                'description' => 'XLCMS',
                 'copyright' => 'Renloong',
                 'icp' => '',
                 'beian' => '',

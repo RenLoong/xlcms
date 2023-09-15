@@ -49,7 +49,7 @@ CREATE TABLE `u_admin`  (
 -- ----------------------------
 -- Records of u_admin
 -- ----------------------------
-INSERT INTO `u_admin` VALUES (1, 1, '5L2Z5b+D', '/uploads/admin/avatar/20230913/b0492d3a00a9fffb911439ba7dc14270.jpg', 'unknown', 'd47fd7e61e5783a154a70e63ddaefeae', 'LgUcou', NULL, NULL, 1, '00:00:00', '23:59:59', '[1,2,3,4,5,6,0]', NULL, '2023-09-15 14:58:12', '2023-03-05 21:19:52', '2023-09-15 14:58:11', '2023-03-07 22:57:45', NULL);
+INSERT INTO `u_admin` VALUES (1, 1, '5L2Z5b+D', '', 'admin', 'd47fd7e61e5783a154a70e63ddaefeae', 'LgUcou', NULL, NULL, 1, '00:00:00', '23:59:59', '[1,2,3,4,5,6,0]', NULL, '2023-09-15 14:58:12', '2023-03-05 21:19:52', '2023-09-15 14:58:11', '2023-03-07 22:57:45', NULL);
 
 -- ----------------------------
 -- Table structure for u_admin_role

@@ -1,6 +1,8 @@
 <?php
+
 namespace app;
 
+use app\common\utils\Json;
 use think\db\exception\DataNotFoundException;
 use think\db\exception\ModelNotFoundException;
 use think\exception\Handle;
@@ -15,6 +17,7 @@ use Throwable;
  */
 class ExceptionHandle extends Handle
 {
+    use Json;
     /**
      * 不需要记录信息（日志）的异常类列表
      * @var array
@@ -51,7 +54,9 @@ class ExceptionHandle extends Handle
     public function render($request, Throwable $e): Response
     {
         // 添加自定义异常处理机制
-
+        if ($request->isAjax() || $request->isPost()) {
+            return $this->exception($e);
+        }
         // 其他错误交给系统处理
         return parent::render($request, $e);
     }

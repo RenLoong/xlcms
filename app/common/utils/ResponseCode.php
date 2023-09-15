@@ -20,6 +20,10 @@ class ResponseCode
      */
     const LOGIN = 600;
     /**
+     * 删除客户端登录状态
+     */
+    const DELETE_LOGIN = 601;
+    /**
      * 验证码错误
      */
     const CAPTCHA = 300;

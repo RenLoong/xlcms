@@ -1,0 +1,1 @@
+import{_ as e}from"./basic.vue_vue_type_style_index_0_lang-41534317.js";import{d as t,a,A as o}from"./index-3b328f2a.js";/* empty css                     */const r=t({name:"/setting/wechat"}),f=t({...r,setup(_){return(c,n)=>(a(),o(e,{group:"wechat"}))}});export{f as default};
