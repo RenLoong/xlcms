@@ -1,13 +1,13 @@
 {
-    "name": "topthink/think",
-    "description": "the new thinkphp framework",
+    "name": "loong/xlcms",
+    "description": "基于TP8开发的一个简易后台管理",
     "type": "project",
     "keywords": [
         "framework",
         "thinkphp",
         "ORM"
     ],
-    "homepage": "https://www.thinkphp.cn/",
+    "homepage": "https://github.com/uRenlong/xlcms",
     "license": "Apache-2.0",
     "authors": [
         {
