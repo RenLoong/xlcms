@@ -12,3 +12,4 @@ Thumbs.db
 /.project
 /public/uploads
 *.pem
+config/xlcms_*.php
