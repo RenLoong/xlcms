@@ -7,8 +7,11 @@ XLCMS
 * 基于`ThinkPHP 8.0`
 
 ## 默认管理员
+
 地址：你的域名/bsadmin
+
 账户：admin
+
 密码：123456
 
 ## 版权信息
